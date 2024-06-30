@@ -1,0 +1,100 @@
+import math
+
+class Kalkulator:
+    def __init__(self):
+        self.wynik = 0
+        self.historia = ""
+
+    def dodaj(self, a, b):
+        self.wynik = a + b
+        self.historia = f"{a} + {b}"
+        return self.wynik
+
+    def odejmij(self, a, b):
+        self.wynik = a - b
+        self.historia = f"{a} - {b}"
+        return self.wynik
+
+    def mnoz(self, a, b):
+        self.wynik = a * b
+        self.historia = f"{a} * {b}"
+        return self.wynik
+
+    def dziel(self, a, b):
+        if b != 0:
+            self.wynik = a / b
+            self.historia = f"{a} / {b}"
+        else:
+            self.wynik = "Błąd: dzielenie przez zero"
+        return self.wynik
+
+    def poteguj(self, a, b):
+        self.wynik = a ** b
+        self.historia = f"{a} ^ {b}"
+        return self.wynik
+
+    def modulo(self, a, b):
+        self.wynik = a % b
+        self.historia = f"{a} % {b}"
+        return self.wynik
+
+    def procent(self, a, b):
+        self.wynik = (a * b) / 100
+        self.historia = f"{a} % {b}"
+        return self.wynik
+
+    def pierwiastek(self, a):
+        self.wynik = math.sqrt(a)
+        self.historia = f"√{a}"
+        return self.wynik
+
+    def odwrotnosc(self, a):
+        if a != 0:
+            self.wynik = 1 / a
+            self.historia = f"1/{a}"
+        else:
+            self.wynik = "Błąd: dzielenie przez zero"
+        return self.wynik
+
+    def silnia(self, a):
+        if a >= 0 and a == int(a):
+            self.wynik = math.factorial(int(a))
+            self.historia = f"{a}!"
+        else:
+            self.wynik = "Błąd: nieprawidłowa liczba"
+        return self.wynik
+
+    def logarytm(self, a, base=10):
+        if a > 0:
+            self.wynik = math.log(a, base)
+            self.historia = f"log_{base}({a})"
+        else:
+            self.wynik = "Błąd: nieprawidłowa liczba"
+        return self.wynik
+
+    def logarytm_naturalny(self, a):
+        return self.logarytm(a, math.e)
+
+    def logarytm_binarny(self, a):
+        return self.logarytm(a, 2)
+
+    def podloga(self, a):
+        self.wynik = math.floor(a)
+        self.historia = f"floor({a})"
+        return self.wynik
+
+    def sufit(self, a):
+        self.wynik = math.ceil(a)
+        self.historia = f"ceil({a})"
+        return self.wynik
+
+    def pokaz_wynik(self):
+        return self.wynik
+
+    def pokaz_historie(self):
+        return self.historia
+
+# Przykład użycia
+kalkulator = Kalkulator()
+print(kalkulator.dodaj(5, 3))  # 8
+print(kalkulator.pokaz_historie())  # 5 + 3
