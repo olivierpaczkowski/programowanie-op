@@ -1,0 +1,125 @@
+using System;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.IO;
+using System.Runtime.CompilerServices;
+using System.Windows;
+
+namespace KolekcjaMediow
+{
+    public enum Nosnik
+    {
+        VHS, DVD, BlueRay, Kaseta, CD, Pendrive
+    }
+
+    public class Media : INotifyPropertyChanged
+    {
+        private string tytul;
+        private string autor;
+        private string wydawca;
+        private Nosnik nosnik;
+        private TimeSpan dlugosc;
+        private DateTime dataWydania;
+
+        public string Tytul
+        {
+            get => tytul;
+            set { tytul = value; OnPropertyChanged(); }
+        }
+
+        public string Autor
+        {
+            get => autor;
+            set { autor = value; OnPropertyChanged(); }
+        }
+
+        public string Wydawca
+        {
+            get => wydawca;
+            set { wydawca = value; OnPropertyChanged(); }
+        }
+
+        public Nosnik Nosnik
+        {
+            get => nosnik;
+            set { nosnik = value; OnPropertyChanged(); }
+        }
+
+        public TimeSpan Dlugosc
+        {
+            get => dlugosc;
+            set { dlugosc = value; OnPropertyChanged(); }
+        }
+
+        public DateTime DataWydania
+        {
+            get => dataWydania;
+            set { dataWydania = value; OnPropertyChanged(); }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+    }
+
+    public partial class MainWindow : Window
+    {
+        public ObservableCollection<Media> MediaList { get; set; }
+
+        public MainWindow()
+        {
+            InitializeComponent();
+            MediaList = new ObservableCollection<Media>();
+            DataContext = this;
+        }
+
+        private void Dodaj_Click(object sender, RoutedEventArgs e)
+        {
+            var noweMedia = new Media();
+            MediaList.Add(noweMedia);
+            var edytujOkno = new EdytujOkno(noweMedia);
+            edytujOkno.ShowDialog();
+        }
+
+        private void Edytuj_Click(object sender, RoutedEventArgs e)
+        {
+            if (ListaMediow.SelectedItem is Media wybraneMedia)
+            {
+                var edytujOkno = new EdytujOkno(wybraneMedia);
+                edytujOkno.ShowDialog();
+            }
+        }
+
+        private void Usun_Click(object sender, RoutedEventArgs e)
+        {
+            if (ListaMediow.SelectedItem is Media wybraneMedia)
+            {
+                MediaList.Remove(wybraneMedia);
+            }
+        }
+
+        private void Importuj_Click(object sender, RoutedEventArgs e)
+        {
+            // Implementacja importu z pliku
+        }
+
+        private void Eksportuj_Click(object sender, RoutedEventArgs e)
+        {
+            // Implementacja eksportu do pliku
+        }
+    }
+
+    public partial class EdytujOkno : Window
+    {
+        public Media Media { get; set; }
+
+        public EdytujOkno(Media media)
+        {
+            InitializeComponent();
+            Media = media;
+            DataContext = Media;
+        }
+    }
+}
