@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Kategorie>
+  <Kategoria>
+    <Nazwa>Samochody osobowe</Nazwa>
+    <Podkategorie>
+      <Podkategoria>
+        <Nazwa>BMW</Nazwa>
+        <Koncern>BMW Group</Koncern>
+        <DataPowstania>1916-03-07</DataPowstania>
+        <KrajeProdukcji>Niemcy, USA, Chiny</KrajeProdukcji>
+        <Modele>
+          <Model>
+            <Nazwa>BMW Seria 3</Nazwa>
+            <RokProdukcji>2020</RokProdukcji>
+            <PojemnoscSilnika>2.0</PojemnoscSilnika>
+            <RodzajNapedu>Napęd na tylne koła</RodzajNapedu>
+          </Model>
+          <Model>
+            <Nazwa>BMW X5</Nazwa>
+            <RokProdukcji>2019</RokProdukcji>
+            <PojemnoscSilnika>3.0</PojemnoscSilnika>
+            <RodzajNapedu>Napęd na cztery koła</RodzajNapedu>
+          </Model>
+        </Modele>
+      </Podkategoria>
+      <Podkategoria>
+        <Nazwa>Audi</Nazwa>
+        <Koncern>Volkswagen Group</Koncern>
+        <DataPowstania>1909-04-25</DataPowstania>
+        <KrajeProdukcji>Niemcy, Węgry, Meksyk</KrajeProdukcji>
+        <Modele>
+          <Model>
+            <Nazwa>Audi A4</Nazwa>
+            <RokProdukcji>2021</RokProdukcji>
+            <PojemnoscSilnika>2.0</PojemnoscSilnika>
+            <RodzajNapedu>Napęd na przednie koła</RodzajNapedu>
+          </Model>
+          <Model>
+            <Nazwa>Audi Q7</Nazwa>
+            <RokProdukcji>2020</RokProdukcji>
+            <PojemnoscSilnika>3.0</PojemnoscSilnika>
+            <RodzajNapedu>Napęd na cztery koła</RodzajNapedu>
+          </Model>
+        </Modele>
+      </Podkategoria>
+    </Podkategorie>
+  </Kategoria>
+  <Kategoria>
+    <Nazwa>Motory</Nazwa>
+    <Podkategorie>
+      <Podkategoria>
+        <Nazwa>Harley-Davidson</Nazwa>
+        <Koncern>Harley-Davidson, Inc.</Koncern>
+        <DataPowstania>1903-06-01</DataPowstania>
+        <KrajeProdukcji>USA</KrajeProdukcji>
+        <Modele>
+          <Model>
+            <Nazwa>Harley-Davidson Street 750</Nazwa>
+            <RokProdukcji>2018</RokProdukcji>
+            <PojemnoscSilnika>0.75</PojemnoscSilnika>
+            <RodzajNapedu>Napęd na tylne koła</RodzajNapedu>
+          </Model>
+          <Model>
+            <Nazwa>Harley-Davidson Iron 883</Nazwa>
+            <RokProdukcji>2019</RokProdukcji>
+            <PojemnoscSilnika>0.883</PojemnoscSilnika>
+            <RodzajNapedu>Napęd na tylne koła</RodzajNapedu>
+          </Model>
+        </Modele>
+      </Podkategoria>
+    </Podkategorie>
+  </Kategoria>
+</Kategorie>
